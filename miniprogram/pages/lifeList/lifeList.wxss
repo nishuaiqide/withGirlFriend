@@ -1,0 +1,84 @@
+/* pages/lifeList/lifeList.wxss */
+
+page {
+  height: 100%;
+  background-color: #fcf2f5;
+}
+
+.content {
+  padding: 0 20rpx;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 36rpx;
+  padding-top: 20rpx;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.list-item {
+  width: 345rpx;
+  height: 345rpx;
+  background-color: #f7f7f7;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 5rpx 5rpx 15rpx rgb(250, 207, 214);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #afafaf;
+  position:relative;
+}
+
+.list-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.item-icon {
+  font-size: 100rpx;
+}
+
+.item-title {
+  font-size: 36rpx;
+}
+
+.item-title2 {
+  line-height: 345rpx;
+  font-size: 30rpx;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  z-inden:2;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.item-add {
+  font-size: 90rpx;
+  color: pink;
+}
+
+.item.input {
+  width: 300rpx;
+  margin: 24rpx auto;
+  border: 5rpx solid pink;
+  font-size: 36rpx;
+}
+
+button[plain] {
+  size: 90rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 90rpx;
+  padding: 0;
+  border: 0;
+}

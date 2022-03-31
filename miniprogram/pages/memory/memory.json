@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "回忆",
+  "backgroundTextStyle":"light" 
+}

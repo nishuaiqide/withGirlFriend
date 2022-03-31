@@ -1,0 +1,103 @@
+<!--pages/love/love.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button class="userinfo-avatar" style="background-image: url({{userinfo.avatarUrl}})"></button>
+    <view>
+      <view class="userinfo-nickname">
+        {{userinfo.nickName}}
+      </view>
+      <view class="userinfo-integral">
+        <block wx:if="{{userinfo == null}}">
+          <navigator url='/pages/authorize/authorize' style='color:blue'>
+            去登录
+          </navigator>
+        </block>
+        <block wx:if="{{userinfo != null}}">
+          累计积分：{{userinfo.integral}}
+        </block>
+      </view>
+    </view>
+    <view class='qiandao'>
+      <i wx:if="{{is_qiandao}}" class="iconfont icon-qiandao" style="font-size:60rpx;color:#707070"></i>
+      <i wx:else class="iconfont icon-qiandao" style="font-size:60rpx;color:#007aff" bindtap="qiandao"></i>
+    </view>
+  </view>
+
+  <view class='list'>
+    <navigator url='/pages/myAllTask/myAllTask?user_id={{userinfo._id}}'>
+      <view class='list-sub'>
+        <i class="iconfont icon-renwuzhongxin list-icon" style="color: blue;"></i>
+        <view class='list-right'>
+          <view class='list-content'>我的任务列表</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class='list'>
+    <navigator url="/pages/myExchange/myExchange?user_id={{userinfo.love_user}}&status=2">
+      <view class='list-sub'>
+        <i class="iconfont icon-jiangli- list-icon" style="color: #FFBC00;"></i>
+        <view class='list-right'>
+          <view class='list-content'>未使用奖品</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='/pages/myExchange/myExchange?user_id={{userinfo.love_user}}&status=3'>
+      <view class='list-sub'>
+        <i class="iconfont icon-yishiyong list-icon" style="color: #333333;"></i>
+        <view class='list-right'>
+          <view class='list-content'>已使用奖品</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class='list'>
+    <navigator url='/pages/auntChart/auntChart'>
+      <view class='list-sub'>
+        <i class="iconfont icon-yima list-icon" style="color: pink;"></i>
+        <view class='list-right'>
+          <view class='list-content'>姨妈分析</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='/pages/lifeList/lifeList'>
+      <view class='list-sub'>
+        <i class="iconfont icon-qingdan list-icon" style="color: pink;font-size:50rpx;"></i>
+        <view class='list-right'>
+          <view class='list-content'>恋爱清单</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='/pages/money/money'>
+      <view class='list-sub'>
+        <i class="iconfont icon-jizhang list-icon" style="color: #F9DB61;"></i>
+        <view class='list-right'>
+          <view class='list-content'>公基金</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+</view>

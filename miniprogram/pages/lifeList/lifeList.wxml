@@ -1,0 +1,29 @@
+<view class='content'>
+  <view class='title'> 已完成（{{finishNum}}/{{totalNum}}）</view>
+  <view class='list'>
+  <view class='list-item'>
+      <form bindsubmit="formSubmit">
+        <input class='item.input' type='text' name='title' placeholder='你想一起做？' value='{{title}}'></input>
+        <button plain="true" form-type="submit">
+          <i class="iconfont icon-jiaguanzhuhuati item-add"></i>
+        </button>
+      </form>
+    </view>
+    <block wx:for="{{list}}">
+      <block wx:if="{{item.img!=''}}">
+        <view class='list-item'>
+          <image src='{{item.img}}' mode="aspectFill" />
+          <view class='item-title2' data-src="{{item.img}}" bindtap="previewImage">{{item.title}}</view>
+        </view>
+      </block>
+      <block wx:if="{{item.img==''}}">
+        <navigator url="/pages/lifeFinish/lifeFinish?id={{item._id}}">
+          <view class='list-item'>
+            <i class="iconfont icon-tianjiatupian item-icon"></i>
+            <view class='item-title'>{{item.title}}</view>
+          </view>
+        </navigator>
+      </block>
+    </block>
+  </view>
+</view>
